@@ -29094,6 +29094,7 @@ in
   pacvim = callPackage ../games/pacvim { };
 
   papermc = callPackage ../games/papermc { };
+  papermc-latest = callPackage ../games/papermc/latest.nix { };
 
   pentobi = libsForQt5.callPackage ../games/pentobi { };
 
