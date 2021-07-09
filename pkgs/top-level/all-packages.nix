@@ -4229,7 +4229,8 @@ in
     inherit (darwin.apple_sdk.frameworks) CoreBluetooth ForceFeedback IOKit OpenGL;
   };
 
-  slippi-bin = callPackage ../misc/emulators/slippi-bin { };
+  slippi-netplay-bin = callPackage ../misc/emulators/slippi-bin/netplay.nix { };
+  slippi-launcher-bin = callPackage ../misc/emulators/slippi-bin/launcher.nix { };
 
   domoticz = callPackage ../servers/domoticz { };
 
