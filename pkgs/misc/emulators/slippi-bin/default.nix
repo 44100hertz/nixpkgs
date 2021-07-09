@@ -1,4 +1,11 @@
-{ appimageTools, fetchurl, lib, glib-networking, vulkan-loader }:
+{ appimageTools
+, fetchurl
+, lib
+, glib-networking
+, gmp
+, vulkan-loader
+, webkitgtk
+}:
 
 let
   command = "slippi-netplay";
@@ -11,9 +18,9 @@ appimageTools.wrapType2 rec {
     url = "https://github.com/project-slippi/Ishiiruka/releases/download/v${version}/Slippi_Online-x86_64.AppImage";
     sha256 = "0zz7zvnjp5s14wj4cri8ppkdvkiv095jpgql27xbmbzyx915qia4";
   };
-  extraPkgs = pkgs: with pkgs; [
-    glib-networking
+  extraPkgs = pkgs: [
     gmp
+    glib-networking
     vulkan-loader
     webkitgtk
   ];
