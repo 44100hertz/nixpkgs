@@ -1,11 +1,11 @@
 { appimageTools, fetchurl, lib, glib-networking, vulkan-loader }:
 
 let
-  pname = "slippi-netplay-bin";
+  command = "slippi-netplay";
   version="2.3.1";
 in
 appimageTools.wrapType2 rec {
-  name = "${pname}-${version}";
+  name = "${command}-bin-${version}";
 
   src = fetchurl {
     url = "https://github.com/project-slippi/Ishiiruka/releases/download/v${version}/Slippi_Online-x86_64.AppImage";
@@ -18,7 +18,7 @@ appimageTools.wrapType2 rec {
     webkitgtk
   ];
   extraInstallCommands = ''
-    mv $out/bin/{${name},${pname}}
+    mv $out/bin/{${name},${command}}
   '';
 
   meta = with lib; {
