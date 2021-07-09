@@ -1,4 +1,4 @@
-{ appimageTools, fetchurl, lib, glib-networking }:
+{ appimageTools, fetchurl, lib, glib-networking, vulkan-loader }:
 
 let
   pname = "slippi-bin";
@@ -14,7 +14,11 @@ appimageTools.wrapType2 rec {
     sha256 = "0zz7zvnjp5s14wj4cri8ppkdvkiv095jpgql27xbmbzyx915qia4";
   };
 
-  profile = "export GIO_EXTRA_MODULES=${glib-networking}/lib/gio/modules";
+  profile = ''
+    export GIO_EXTRA_MODULES=${glib-networking}/lib/gio/modules
+    export LD_LIBRARY_PATH=${vulkan-loader}/lib
+  '';
+
 
   meta = with lib; {
     homepage = "https://slippi.gg/netplay";
