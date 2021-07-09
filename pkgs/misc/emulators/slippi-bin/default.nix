@@ -23,7 +23,12 @@ appimageTools.wrapType2 rec {
 
   meta = with lib; {
     homepage = "https://slippi.gg/netplay";
-    description = "Dolphin emulator customized for online melee netplay"; # TODO: improve
+    description = "Emulator customized for Super Smash Bros Melee netplay";
+    longDescription = ''
+      The dolphin gamecube emulator modified to add extra functionality to
+      Super Smash Bros Melee netplay. Features include rollback netplay,
+      matchmaking, replay saving, and more.
+    '';
     platforms = [ "x86_64-linux" ];
     license = licenses.gpl2Plus;
     maintainers = with maintainers; [ neonfuz ];
