@@ -1,7 +1,7 @@
 { appimageTools, fetchurl, lib, glib-networking, vulkan-loader }:
 
 let
-  pname = "slippi-bin";
+  pname = "slippi-netplay-bin";
   version="2.3.1";
 in
 appimageTools.wrapType2 rec {
@@ -19,6 +19,9 @@ appimageTools.wrapType2 rec {
     export LD_LIBRARY_PATH=${vulkan-loader}/lib
   '';
 
+  extraInstallCommands = ''
+    mv $out/bin/{${name},${pname}}
+  '';
 
   meta = with lib; {
     homepage = "https://slippi.gg/netplay";
