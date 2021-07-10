@@ -38,3 +38,6 @@ stdenv.mkDerivation rec {
     maintainers = with lib.maintainers; [ neonfuz ];
   };
 }
+
+# TODO: test offline network
+# won't matter for most users because minecraft servers will usually be online
